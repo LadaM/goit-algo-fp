@@ -45,6 +45,7 @@ def draw_pythagorean_tree(t, branch_length, depth):
 
 def main():
     depth_input = input("Enter the depth of the tree: ")
+    depth = None
     if depth_input:
         try:
             depth = int(depth_input)
@@ -59,6 +60,8 @@ def main():
             elif depth > MAX_DEPTH:
                 print(f"Depth {depth} is too high. Maximum depth is {MAX_DEPTH}")
                 depth = MAX_DEPTH
+            else:
+                depth = DEFAULT_TREE_DEPTH
     else:
         depth = DEFAULT_TREE_DEPTH
 
