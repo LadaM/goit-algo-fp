@@ -33,7 +33,17 @@ def find_middle(head):
     return slow
 
 
-def merge(left, right):
+def merge(left, right) -> LinkedList:
+    """
+    Merge two sorted linked lists into a new linked list.
+
+    Args:
+    - left: The head node of the first linked list.
+    - right: The head node of the second linked list.
+
+    Returns:
+    - LinkedList: A new linked list containing all the nodes from the input linked lists in sorted order.
+    """
     dummy = Node(None)  # Dummy node with an empty value
     current = dummy
 
@@ -71,3 +81,21 @@ if __name__ == "__main__":
 
     print("\nSorted linked list:")
     print(sorted_ll)
+
+    # check if merge function can merge two sorted linked lists into one correctly sorted
+    list1 = LinkedList()
+    items1 = [3, 6, 10, 23, 89]
+    for i in items1:
+        list1.add(i)
+
+    print("\nList 1:", list1)
+    
+    list2 = LinkedList()
+    items2 = [1, 5, 8, 12, 27]
+    for i in items2:
+        list2.add(i)
+
+    print("List 2:", list2)
+
+    merged_list = merge(list1, list2)
+    print("\nMerged list:", merged_list)
